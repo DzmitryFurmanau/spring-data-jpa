@@ -30,10 +30,8 @@ public class Main {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext annotatedClassApplicationContext =
-                new AnnotationConfigApplicationContext(AppConfiguration.class);
-        Main main = annotatedClassApplicationContext
-                .getBean("main", Main.class);
+        AnnotationConfigApplicationContext annotatedClassApplicationContext = new AnnotationConfigApplicationContext(AppConfiguration.class);
+        Main main = annotatedClassApplicationContext.getBean("main", Main.class);
         Optional<User> one = main.getUserRepository().findById(1L);
         one.ifPresent(System.out::println);
 //

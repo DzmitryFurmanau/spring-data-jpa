@@ -71,7 +71,7 @@ public class AppConfiguration {
         LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean =
                 new LocalContainerEntityManagerFactoryBean();
         localContainerEntityManagerFactoryBean.setDataSource(dataSource());
-        localContainerEntityManagerFactoryBean.setPackagesToScan("com.it.app.model");
+        localContainerEntityManagerFactoryBean.setPackagesToScan("com.autoPartsStore.app.model");
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
         localContainerEntityManagerFactoryBean.setJpaProperties(additionalProperties());

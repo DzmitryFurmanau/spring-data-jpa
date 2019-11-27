@@ -6,4 +6,5 @@
 /**
  * This package contains Model classes.
  */
+
 package com.autoPartsStore.app.model;

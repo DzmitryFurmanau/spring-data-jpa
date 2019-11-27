@@ -6,4 +6,5 @@
 /**
  * This package contains Config classes.
  */
+
 package com.autoPartsStore.app.config;

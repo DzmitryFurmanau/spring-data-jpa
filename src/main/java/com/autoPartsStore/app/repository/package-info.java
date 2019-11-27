@@ -6,4 +6,5 @@
 /**
  * This package contains Repository interfaces.
  */
+
 package com.autoPartsStore.app.repository;
