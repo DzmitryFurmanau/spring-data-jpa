@@ -1,4 +1,10 @@
-package com.it.app.config;
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+ *
+ * Copyright (c) 2019. @author Dzmitry Furmanau. All rights reserved.
+ */
+
+package com.autoPartsStore.app.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -18,13 +24,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * The type App configuration.
+ */
 @Configuration
 @PropertySource("classpath:database.properties")
-@ComponentScan("com.it.app")
+@ComponentScan("com.autoPartsStore.app")
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {
-        "com.it.app.repository"
-})
+@EnableJpaRepositories(basePackages = {"com.autoPartsStore.app.repository"})
 public class AppConfiguration {
 
     @Value("${connection.driver_class}")
@@ -39,6 +46,11 @@ public class AppConfiguration {
     @Value("${connection.password}")
     private String password;
 
+    /**
+     * Data source data source.
+     *
+     * @return the data source
+     */
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource driver = new DriverManagerDataSource();
@@ -49,9 +61,15 @@ public class AppConfiguration {
         return driver;
     }
 
+    /**
+     * Entity manager factory local container entity manager factory bean.
+     *
+     * @return the local container entity manager factory bean
+     */
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+        LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean =
+                new LocalContainerEntityManagerFactoryBean();
         localContainerEntityManagerFactoryBean.setDataSource(dataSource());
         localContainerEntityManagerFactoryBean.setPackagesToScan("com.it.app.model");
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -60,6 +78,12 @@ public class AppConfiguration {
         return localContainerEntityManagerFactoryBean;
     }
 
+    /**
+     * Transaction manager platform transaction manager.
+     *
+     * @param emf the emf
+     * @return the platform transaction manager
+     */
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();

@@ -58,7 +58,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.it.app.Main</mainClass>
+                            <mainClass>com.autoPartsStore.app.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
