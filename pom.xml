@@ -20,7 +20,7 @@
         <hibernate.validator>6.0.16.Final</hibernate.validator>
         <postgresql.driver>42.2.8</postgresql.driver>
         <javax.servlet>4.0.1</javax.servlet>
-        <jackson.core>2.9.9</jackson.core>
+        <jackson.core>2.10.1</jackson.core>
         <tomcat>9.0.29</tomcat>
         <dozer>5.5.1</dozer>
         <logback>1.2.3</logback>
