@@ -3,7 +3,6 @@ package com.autoPartsStore.app;
 import com.autoPartsStore.app.config.AppConfiguration;
 import com.autoPartsStore.app.model.User;
 import com.autoPartsStore.app.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +14,11 @@ import java.util.Optional;
 @Component
 public class Main {
 
-    @Autowired
     private UserRepository userRepository;
+
+    public Main(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     /**
      * The entry point of application.
