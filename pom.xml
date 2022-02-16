@@ -19,7 +19,7 @@
         <spring.data>2.2.2.RELEASE</spring.data>
         <hibernate.core>5.4.9.Final</hibernate.core>
         <hibernate.validator>6.1.0.Final</hibernate.validator>
-        <postgresql.driver>42.2.8</postgresql.driver>
+        <postgresql.driver>42.3.3</postgresql.driver>
         <javax.servlet>4.0.1</javax.servlet>
         <jackson.core>2.10.1</jackson.core>
         <tomcat>9.0.29</tomcat>
